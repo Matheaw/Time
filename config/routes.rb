@@ -1,4 +1,11 @@
 Workspace::Application.routes.draw do
+  get "users/index"
+  get "users/show"
+  get "users/new"
+  get "users/create"
+  get "users/edit"
+  get "users/update"
+  get "users/destroy"
   get "static_pages/about"
   get "static_pages/contact"
   get "static_pages/home"
