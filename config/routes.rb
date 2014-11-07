@@ -1,14 +1,21 @@
 Workspace::Application.routes.draw do
-  get "users/index"
-  get "users/show"
-  get "users/new"
-  get "users/create"
-  get "users/edit"
-  get "users/update"
-  get "users/destroy"
-  get "static_pages/about"
-  get "static_pages/contact"
+  
+  resources :users
+  # get "users/index"
+  # get "users/show"
+  # get "users/new"
+  # get "users/create"
+  # get "users/edit"
+  # get "users/update"
+  # get "users/destroy"
+  get "sign_up" => "users#new"
+  get "about" => 'static_pages#about'
+  get "contact" => 'static_pages#contact'
   get "static_pages/home"
+  get "sign_in" => 'sessions#new'
+  post "sign_in" => 'sessions#create'
+  delete 'sign_out' => 'sessions#destroy'
+   root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
